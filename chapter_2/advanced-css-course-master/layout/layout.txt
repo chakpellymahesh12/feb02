@@ -1,0 +1,184 @@
+NAV:CSS
+'''''''''
+
+*{
+  margin:0;
+  padding:0;
+  
+}
+$color-yel:yellow;
+$button-width:130px;
+$button-padding:10px;
+$color-pink:pink;
+$col-buttons:#777;
+$color-butttwo:red;
+
+@mixin style-text-link($col){
+  
+  text-decoration:none;
+  text-transform:uppercase;
+  color:$col;
+  
+  
+}
+
+@mixin clearfix{
+  &::after {
+    content: "";
+    clear:both;
+    display:table;
+    }
+  
+}
+
+nav{
+  margin:20px;
+  background-color:$color-yel;
+   @include clearfix;
+  }
+.navigation{
+  padding:20px;
+  
+  list-style:none;
+  float:left;
+  
+  li{
+    display:inline-block;
+    margin-left:30px;
+    color:black;
+    &:first-child{
+      margin:0;
+    }
+    a:link{
+      @include style-text-link($color-yel);
+      }
+    
+   
+   
+   
+    }
+}
+
+.buttons{
+  padding:10px;
+  float:right;
+ 
+
+ }
+
+%btn-placeholder{
+  
+  padding:$button-padding;
+  text-align:center;
+  border-radius:100px;
+  
+  width:$button-width;
+
+   display:inline-block;
+  @include style-text-link($col-buttons);
+  
+  
+}
+.btn-signup{
+  
+  &:link{
+    @extend %btn-placeholder;
+    background-color:$color-pink;
+    
+    
+  }
+  &:hover{
+    background-color:darken($color-pink,40%);
+    
+  }
+}
+
+.btn-login{
+  &:link{
+    @extend %btn-placeholder;
+    background-color:$color-butttwo;
+    
+  }
+  &:hover{
+    background-color:lighten($color-butttwo,20%);
+  }
+}
+
+'''''''''''''''''''
+NAV.HTML:
+''''''''''
+<nav>
+  <ul class="navigation">
+    <li ><a href="#" class="">About us</a></li>
+     <li ><a href="#" class="">Contact us</a></li>
+    <li ><a href="#" class=""> Menu</a></li>
+   </ul>
+  <div class="buttons">
+    <a href="#" class="btn-signup">Signup</a>
+    <a href="#" class="btn-login">Login</a>
+  </div>
+</nav>
+
+
+''''''''''
+
+'''''''''''''''''''''''
+layout should be:
+''''''''''''''''''''''''
+
+Responsive design
+Maintainable and scalable code
+web performance
+
+CODE SHOULD BE LIKE:
+
+->CLEAN
+->MODULAR
+->REUSABLE
+->READY FOR GROWTH
+
+HOW TO START THE WEBSITE:
+''''''''''''''''''''''''''''
+
+THINK
+'''''
+think about the layout of your webpage or web app before writing code.
+
+BUILD
+'''''
+build your layout in HTML and CSS with a consistent structure for naming classes.
+
+ARCHITECT:
+''''''''''
+create a logicaal architecture for your CSS with files and folders.
+
+
+
+
+1)COMPONENT-DRIVEN DESIGN:
+''''''''''''''''''''''''''''
+
+Modular building blocks that make up interfaces;
+held together by the layout of thepage;
+reusable across the project and between differnet pro;
+
+
+2)BEM:BLOCK ELEMENT MODIFIER:
+
+BLOCK IS CLASS
+
+ELEMENT IS CLASS-ELEMENT_NAME
+MODIFIER IS CLASS_ELEMENT--MODIFIER
+
+
+3)7-1 PATTERN
+WHERE WE HAVE SEVEN .CSS AND 1 MAIN.CSS AND SASS
+WHICH RUNS
+BASE/BASE LOCATION
+COMPONENTS/ONE FILE EACH COMPONENT
+LAYOUT/LAYOIUTS OF WEBPAGE
+PAGES/WEB PAGES
+THEMES/THEMES FOR OPAGE
+ABSTRACTS/VARIABLES MIXINGS
+THIRD PARTY
+VENDORS/
